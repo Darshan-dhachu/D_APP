@@ -22,3 +22,17 @@ elif mode == 'generate code questions':
 else:
   question = st.text_area('Enter interview question here ')
   answer = st.text_area('enter your answer ', height = 160)
+
+if st.button("Generate AI Response", type = "primary") :
+    if mode ==["Evaluate Answer", "Improve Answer"] and (not question.strip()) or (not answer.strip()):
+        st.warning ("please enter a valid Question and Answer")
+        st.stop()
+       topics = "Topics is " + topic + "difficlty is " + level 
+  if mode == "generate questions":
+    task = "generate" + str(count) + "Frequenrtly asked Interview question 3 theory and 2 conceptual. do not give answers. give hints"
+  elif mode == "generate code questions":
+    task = "generate" + str(count) + "Frequenrtly askedcodeing question on "
+  elif mode == "evaluate answer":
+    task = "question :" + question + "MY Answer : " + answer + "Evalute this answer based on concept, relevence , communication, length of answe. give each rating out of 5 in a list. "
+   elif mode == "improve answers":
+     task = "question :" + question + "MY Answer : " + answer + "imporve the answern based oon choice on words key words to include "
